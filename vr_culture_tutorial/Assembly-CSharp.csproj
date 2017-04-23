@@ -46,6 +46,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\AddPKFxFXComponent.cs" />
+     <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\BounceDie.cs" />
+     <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\CamZoom.cs" />
+     <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\FPSCam.cs" />
+     <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\PointClickSpawn.cs" />
+     <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\RomanCandle.cs" />
+     <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\RootyTootyPointNShooty.cs" />
+     <Compile Include="Assets\DiscoveryPack_Demo\_Sources\Scripts\TimedSuicide.cs" />
      <Compile Include="Assets\Materials\Skyboxes\Fantasy Skybox FREE\Demo\Scripts\GE_FantasySkyboxFREE_Demo.cs" />
      <Compile Include="Assets\Materials\Skyboxes\Fantasy Skybox FREE\Demo\Scripts\GE_FantasySkyboxFREE_UIs.cs" />
      <Compile Include="Assets\Materials\Skyboxes\GE Common Assets\GE Orbit Camera\Scripts\GE_OrbitCamera.cs" />
@@ -251,11 +259,15 @@
      <Compile Include="Assets\VRStandardAssets\Scripts\VRTrackingReset.cs" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\Materials\Skyboxes\Fantasy Skybox FREE\Readme.txt" />
+     <None Include="Assets\DiscoveryPack_Demo\_README_FIRST.txt" />
+     <None Include="Assets\PopcornFX\Resources\PkFxDepthCopy.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ClearAll.shader" />
      <None Include="Assets\SteamVR\InteractionSystem\Hints\Shaders\ControllerButtonHints.shader" />
      <None Include="Assets\VRSampleScenes\Shaders\UnlitTransparentParam.shader" />
+     <None Include="Assets\PopcornFX\README.txt" />
      <None Include="Assets\SteamVR\InteractionSystem\Teleport\Shaders\Highlight.shader" />
      <None Include="Assets\Materials\Skyboxes\Fantasy Skybox FREE\Fog and Ambient reference.txt" />
+     <None Include="Assets\PopcornFX\Resources\PKFxDistQuickDirtyBlurEffect.shader" />
      <None Include="Assets\Materials\Skyboxes\GUI Animator\GUI Animator FREE\Readme.txt" />
      <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
@@ -263,6 +275,8 @@
      <None Include="Assets\Materials\Skyboxes\GUI Animator\GUI Animator FREE\!How to.txt" />
      <None Include="Assets\SteamVR\readme.txt" />
      <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\Silhouette.shader" />
+     <None Include="Assets\PopcornFX\Resources\PKFxDepthCopyToColor.shader" />
+     <None Include="Assets\PopcornFX\Resources\PKFxDistortionEffect.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
      <None Include="Assets\SteamVR\InteractionSystem\Core\Shaders\SeeThru.shader" />
      <None Include="Assets\SteamVR\InteractionSystem\Readme_InteractionSystem.txt" />
@@ -289,6 +303,15 @@
  </Reference>
  <Reference Include="GUIAnimatorFREE">
  <HintPath>C:/Users/27tan/Desktop/vr_culture_tutorial/vr_culture_tutorial/Assets/Materials/Skyboxes/GUI Animator/GUI Animator FREE/Plugins/GUIAnimatorFREE.dll</HintPath>
+ </Reference>
+ <Reference Include="PKFx-Helper">
+ <HintPath>C:/Users/27tan/Desktop/vr_culture_tutorial/vr_culture_tutorial/Assets/PopcornFX/Scripts/PKFx-Helper.dll</HintPath>
+ </Reference>
+ <Reference Include="PKFx-Runtime">
+ <HintPath>C:/Users/27tan/Desktop/vr_culture_tutorial/vr_culture_tutorial/Assets/PopcornFX/Scripts/PKFx-Runtime.dll</HintPath>
+ </Reference>
+ <Reference Include="PKFxManager">
+ <HintPath>C:/Users/27tan/Desktop/vr_culture_tutorial/vr_culture_tutorial/Assets/PopcornFX/Scripts/PKFxManager.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

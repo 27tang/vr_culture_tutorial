@@ -42,6 +42,7 @@ public class SceneSwitchController : MonoBehaviour {
 			{
 				
 			case 2:
+				Debug.Log ("YOOOOOO");
 				welcomeText.SetActive (false);
 				secondText.SetActive (true);
 				gameStage++;
