@@ -6,7 +6,11 @@ public class BoxController : MonoBehaviour {
 
 	public GameObject box;
 	public GameObject butterflies;
+	Animator anim;
 
+	void Awake() {
+		anim = GetComponentInChildren <Animator> ();
+	}
 	// Use this for initialization
 	void Start () {
 		butterflies.SetActive (false);
@@ -19,6 +23,7 @@ public class BoxController : MonoBehaviour {
 
 	public void activate(){
 		box.SetActive (true);
+
 	}
 	public void deactivate(){
 		box.SetActive (false);
@@ -27,6 +32,7 @@ public class BoxController : MonoBehaviour {
 
 	public void releaseButts(){
 		butterflies.SetActive (true);
+		anim.SetBool ("ShouldOpen", true);
 	}
 
 	public void killButterflies(){

@@ -6,8 +6,10 @@ public class SceneSwitchController : MonoBehaviour {
 
 	public GameObject welcomeText;
 	public GameObject secondText;
+	public GameObject thirdText; //narrator tip 1(personal space)
 	public GameObject boxEvent;
 	public GameObject wall;
+	private bool alreadyReleased;
 	private SteamVR_TrackedObject trackedObj;
 
 	private SteamVR_Controller.Device Controller
@@ -29,6 +31,7 @@ public class SceneSwitchController : MonoBehaviour {
 	void Start() {
 		//welcomeText.SetActive (false);
 		secondText.SetActive(false);
+		thirdText.SetActive (false);
 		boxEvent.GetComponent<BoxController> ().deactivate ();
 
 		//welcomeText.GetComponent<UIFader> ().FadeIn ();
@@ -43,29 +46,38 @@ public class SceneSwitchController : MonoBehaviour {
 				
 			case 2: //box level
 				welcomeText.SetActive (false);
-				secondText.SetActive (true);
+				secondText.SetActive (true);//approach and click
 				boxEvent.GetComponent<BoxController> ().activate ();
 				gameStage++;
 				break;
 			case 3: //box spitting a butterflyball
-				secondText.SetActive (false);
-				boxEvent.GetComponent<BoxController> ().releaseButts ();
+				releaseButterflies();		
 				gameStage++;
 				break;
 			case 4:
 				boxEvent.GetComponent<BoxController> ().deactivate ();
-				wall.GetComponent<WallController> ().activate ();
-				Debug.Log ("in case 4");
-				gameStage++;
+				secondText.SetActive (false);
+				thirdText.SetActive (true);
 				break;
 			case 5:
+				thirdText.SetActive (false);
+				wall.GetComponent<WallController> ().activate ();
+				gameStage++;
+				break;
+			case 6:
 				gameStage++;
 				break;
 			}
+			Debug.Log("gameStage:");
+			Debug.Log (gameStage);
 		}
 
+	}
 
-
-	
+	void releaseButterflies(){
+		if (!alreadyReleased) {
+			boxEvent.GetComponent<BoxController> ().releaseButts ();
+			alreadyReleased = true;
+		}
 	}
 }
