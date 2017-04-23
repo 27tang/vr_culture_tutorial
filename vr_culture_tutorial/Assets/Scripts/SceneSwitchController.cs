@@ -37,27 +37,26 @@ public class SceneSwitchController : MonoBehaviour {
 	void Update () {
 		
 		if (Controller.GetHairTriggerDown()) {
-		
 			switch (gameStage)
 			{
 				
-			case 2:
-				Debug.Log ("YOOOOOO");
+			case 2: //box level
 				welcomeText.SetActive (false);
 				secondText.SetActive (true);
+				boxEvent.GetComponent<BoxController> ().activate ();
 				gameStage++;
 				break;
 			case 3: //box spitting a butterflyball
 				secondText.SetActive (false);
-				boxEvent.GetComponent<BoxController> ().activate ();
-				gameStage++;
-				break;
-			case 4:
 				boxEvent.GetComponent<BoxController> ().releaseButts ();
 				gameStage++;
 				break;
-			case 5:
+			case 4:
 				boxEvent.GetComponent<BoxController> ().deactivate ();
+				gameStage++;
+				break;
+			case 5:
+				
 				gameStage++;
 				break;
 			}
