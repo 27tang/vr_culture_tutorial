@@ -70,7 +70,7 @@ public class SceneSwitchController : MonoBehaviour {
 				fourthText.SetActive (true);
 				break;
 			case 7:
-				fourthText.SetActive (false);
+				//fourthText.SetActive (false);
 				break;
 			}
 			Debug.Log("gameStage:");
