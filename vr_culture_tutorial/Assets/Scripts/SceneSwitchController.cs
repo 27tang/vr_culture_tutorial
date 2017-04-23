@@ -9,6 +9,7 @@ public class SceneSwitchController : MonoBehaviour {
 	public GameObject thirdText; //narrator tip 1(personal space)
 	public GameObject boxEvent;
 	public GameObject wall;
+	public GameObject fourthText;
 	private bool alreadyReleased;
 	private SteamVR_TrackedObject trackedObj;
 
@@ -33,6 +34,8 @@ public class SceneSwitchController : MonoBehaviour {
 		secondText.SetActive(false);
 		thirdText.SetActive (false);
 		boxEvent.GetComponent<BoxController> ().deactivate ();
+		wall.GetComponent<WallController> ().deactivate ();
+		fourthText.SetActive (false);
 
 		//welcomeText.GetComponent<UIFader> ().FadeIn ();
 	}
@@ -48,11 +51,9 @@ public class SceneSwitchController : MonoBehaviour {
 				welcomeText.SetActive (false);
 				secondText.SetActive (true);//approach and click
 				boxEvent.GetComponent<BoxController> ().activate ();
-				gameStage++;
 				break;
 			case 3: //box spitting a butterflyball
 				releaseButterflies();		
-				gameStage++;
 				break;
 			case 4:
 				boxEvent.GetComponent<BoxController> ().deactivate ();
@@ -62,14 +63,19 @@ public class SceneSwitchController : MonoBehaviour {
 			case 5:
 				thirdText.SetActive (false);
 				wall.GetComponent<WallController> ().activate ();
-				gameStage++;
 				break;
 			case 6:
-				gameStage++;
+				Debug.Log ("in case 6");
+				wall.GetComponent<WallController> ().deactivate ();
+				fourthText.SetActive (true);
+				break;
+			case 7:
+				fourthText.SetActive (false);
 				break;
 			}
 			Debug.Log("gameStage:");
 			Debug.Log (gameStage);
+			gameStage++;
 		}
 
 	}
