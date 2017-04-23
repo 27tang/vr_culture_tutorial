@@ -31,8 +31,14 @@ public class BoxController : MonoBehaviour {
 	}
 
 	public void releaseButts(){
-		butterflies.SetActive (true);
+		
 		anim.SetBool ("ShouldOpen", true);
+		StartCoroutine(delay());
+	}
+
+	IEnumerator delay(){
+		yield return new WaitForSeconds (1f);
+		butterflies.SetActive (true);
 	}
 
 	public void killButterflies(){
