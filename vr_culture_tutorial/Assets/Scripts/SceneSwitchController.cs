@@ -7,6 +7,7 @@ public class SceneSwitchController : MonoBehaviour {
 	public GameObject welcomeText;
 	public GameObject secondText;
 	public GameObject boxEvent;
+	public GameObject wall;
 	private SteamVR_TrackedObject trackedObj;
 
 	private SteamVR_Controller.Device Controller
@@ -53,10 +54,11 @@ public class SceneSwitchController : MonoBehaviour {
 				break;
 			case 4:
 				boxEvent.GetComponent<BoxController> ().deactivate ();
+				wall.GetComponent<WallController> ().activate ();
+				Debug.Log ("in case 4");
 				gameStage++;
 				break;
 			case 5:
-				
 				gameStage++;
 				break;
 			}

@@ -257,6 +257,7 @@
      <Compile Include="Assets\VRStandardAssets\Scripts\VRInput.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VRInteractiveItem.cs" />
      <Compile Include="Assets\VRStandardAssets\Scripts\VRTrackingReset.cs" />
+     <Compile Include="Assets\WallController.cs" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\Materials\Skyboxes\Fantasy Skybox FREE\Readme.txt" />
      <None Include="Assets\DiscoveryPack_Demo\_README_FIRST.txt" />
