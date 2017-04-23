@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class SceneSwitchController : MonoBehaviour {
 
+	public GameObject welcomeText;
+	public GameObject secondText;
+	public GameObject boxEvent;
 	private SteamVR_TrackedObject trackedObj;
 
 	private SteamVR_Controller.Device Controller
@@ -13,10 +16,8 @@ public class SceneSwitchController : MonoBehaviour {
 
 	private GameObject collidingObject; 
 
-	private GameObject cube; 
-	private GameObject ball; 
 
-
+	private int gameStage = 2;
 
 	void Awake()
 	{
@@ -24,32 +25,40 @@ public class SceneSwitchController : MonoBehaviour {
 
 	}
 
-	void Start()
-	{
-		cube =  GameObject.FindWithTag ("Cube");
-		ball =  GameObject.FindWithTag ("Ball");
+	void Start() {
+		//welcomeText.SetActive (false);
+		secondText.SetActive(false);
+		boxEvent.GetComponent<BoxController> ().deactivate ();
 
-		ball.SetActive (false);
-
-
-
-
+		//welcomeText.GetComponent<UIFader> ().FadeIn ();
 	}
 
 	// Update is called once per frame
 	void Update () {
 		
-		if (Controller.GetPressDown (SteamVR_Controller.ButtonMask.Grip)) {
-			if (cube.activeSelf) {
-				//deactivate ball and activate cube
-				cube.SetActive (false);
-				ball.SetActive (true);
-				Debug.Log ("cubed");
-			} else {
-				//deactivate cube and activate ball
-				cube.SetActive (true);
-				ball.SetActive (false);
-				Debug.Log ("not");
+		if (Controller.GetHairTriggerDown()) {
+		
+			switch (gameStage)
+			{
+				
+			case 2:
+				welcomeText.SetActive (false);
+				secondText.SetActive (true);
+				gameStage++;
+				break;
+			case 3: //box spitting a butterflyball
+				secondText.SetActive (false);
+				boxEvent.GetComponent<BoxController> ().activate ();
+				gameStage++;
+				break;
+			case 4:
+				boxEvent.GetComponent<BoxController> ().releaseButts ();
+				gameStage++;
+				break;
+			case 5:
+				boxEvent.GetComponent<BoxController> ().deactivate ();
+				gameStage++;
+				break;
 			}
 		}
 

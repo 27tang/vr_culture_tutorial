@@ -56,6 +56,8 @@ namespace VRStandardAssets.Utils
 
         public IEnumerator FadeIn()
         {
+
+			Debug.Log ("FADING, trying to");
             // Fading has now started.
             m_Fading = true;
 
